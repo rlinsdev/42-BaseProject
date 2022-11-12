@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rlins <rlins@student.42.fr>                +#+  +:+       +#+         #
+#    By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/04 19:44:22 by roaraujo          #+#    #+#              #
-#    Updated: 2022/07/28 19:35:19 by rlins            ###   ########.fr        #
+#    Updated: 2022/11/12 13:22:56 by rlins            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ OBJS_PATH = ./obj/
 LIBS_PATH = ../
 
 # Compilation
-CC = gcc
+CC = gcc -g
 FLAGS = -Wall -Wextra -Werror
 
 # Bash commands
@@ -64,7 +64,7 @@ SRC_FILES =	ft_atoi.c \
 			ft_strtrim.c \
 			ft_substr.c \
 			ft_tolower.c \
-			ft_toupper.c 
+			ft_toupper.c
 
 SOURCES = $(addprefix $(SRCS_PATH), $(SRC_FILES))
 OBJ_FILES = $(patsubst %.c, %.o, $(SRC_FILES))
