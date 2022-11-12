@@ -6,7 +6,7 @@
 #    By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/12 08:46:02 by rlins             #+#    #+#              #
-#    Updated: 2022/11/12 10:33:38 by rlins            ###   ########.fr        #
+#    Updated: 2022/11/12 10:39:03 by rlins            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,7 +89,7 @@ run: all
 
 clean:
 	@$(PRINTF) "$(CYAN)Cleaning up object files in $(BIN)...$(DEFAULT)\n"
-	@if [ -d "libft" ]; then \
+	@if [ -d "lib/libft" ]; then \
 		make clean -C libft/; \
 	fi
 	@$(RM) -r $(OBJ_DIR)
@@ -99,7 +99,7 @@ fclean: clean
 	@$(PRINTF) "$(CYAN)Removed $(BIN)$(DEFAULT)\n"
 
 norminette:
-	@if [ -d "libft" ]; then \
+	@if [ -d "lib/libft" ]; then \
 		make norminette -C libft/; \
 	fi
 	@$(PRINTF) "$(CYAN)\nChecking norm for $(BIN)...$(DEFAULT)\n"
