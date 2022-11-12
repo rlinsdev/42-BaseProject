@@ -6,7 +6,7 @@
 #    By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/04 19:44:22 by roaraujo          #+#    #+#              #
-#    Updated: 2022/11/12 13:22:56 by rlins            ###   ########.fr        #
+#    Updated: 2022/11/12 13:26:15 by rlins            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,9 +75,9 @@ all: prep $(LIBNAME)
 
 # Compiles
 prep:
-	@echo "$(LIBNAME): $(BLUE)Generating... Just a minute$(RESET)"
+#@echo "$(LIBNAME): $(BLUE)Generating... Just a minute$(RESET)"
 	@$(MKDIR) $(SRCS_PATH) $(OBJS_PATH)
-	@echo "$(LIBNAME): $(GREEN)Done!$(RESET)"
+#@echo "$(LIBNAME): $(GREEN)Done!$(RESET)"
 
 $(LIBNAME): $(OBJECTS)
 	@ar -rcs $(LIBS_PATH)$(LIBNAME) $(OBJECTS)
@@ -86,13 +86,13 @@ $(OBJS_PATH)%.o : $(SRCS_PATH)%.c $(HEADERS_PATH)*.h
 	@$(CC) $(FLAGS) -c -I $(HEADERS_PATH) $< -o $@
 
 clean:
-	@echo "$(LIBNAME): $(RED)object (*.o) files were deleted$(RESET)"
+#@echo "$(LIBNAME): $(RED)object (*.o) files were deleted$(RESET)"
 	@$(RM) $(OBJECTS)
 
 fclean:
-	@echo "$(LIBNAME): $(RED)was deleted$(RESET)"
+#@echo "$(LIBNAME): $(RED)was deleted$(RESET)"
 	@$(RM) $(OBJECTS)
-	@$(RM) $(LIBS_PATH)$(LIBNAME)
+#@$(RM) $(LIBS_PATH)$(LIBNAME)
 
 re: fclean all
 
