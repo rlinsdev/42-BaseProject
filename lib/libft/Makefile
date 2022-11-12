@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/10/04 19:44:22 by roaraujo          #+#    #+#              #
-#    Updated: 2022/11/12 13:26:15 by rlins            ###   ########.fr        #
+#    Created: 2022/11/12 14:04:52 by rlins             #+#    #+#              #
+#    Updated: 2022/11/12 14:09:04 by rlins            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Collors
-GREEN = \033[0;32m
-RED = \033[0;31m
-BLUE = \033[0;34m
-RESET = \033[0m
+GREEN 	= \033[0;32m
+RED 	= \033[0;31m
+BLUE 	= \033[0;34m
+RESET 	= \033[0m
 
 # Paths
 HEADERS_PATH = ../../include/
@@ -92,7 +92,7 @@ clean:
 fclean:
 #@echo "$(LIBNAME): $(RED)was deleted$(RESET)"
 	@$(RM) $(OBJECTS)
-#@$(RM) $(LIBS_PATH)$(LIBNAME)
+	@$(RM) $(LIBS_PATH)$(LIBNAME)
 
 re: fclean all
 
