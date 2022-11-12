@@ -6,7 +6,7 @@
 #    By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/12 08:46:02 by rlins             #+#    #+#              #
-#    Updated: 2022/11/12 13:35:58 by rlins            ###   ########.fr        #
+#    Updated: 2022/11/12 13:49:38 by rlins            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,8 @@ CC = gcc
 CFLAGS = -g
 
 RM				= rm -rf
-MAKE_NO_PRINT	= --no-print-directory
+NO_PRINT	= --no-print-directory
+READ_LN		= -l readline
 
 INCLUDE = -I $(INC_PATH) -I $(LIBFT_PATH)
 
@@ -50,12 +51,9 @@ OBJS = $(patsubst $(PATH_SRC)%.c, $(PATH_OBJS)%.o, $(SRCS))
 
 all: $(LIBFT) $(NAME)
 
-# $(NAME): $(OBJS)
-# 	@$(CC) $(CFLAGS) $(INCLUDE) ./objs/*/*.o -o $(NAME) $(LIBFT) -lreadline
-# 	@echo "$(GREEN)Build Successfully$(RESET)"
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $@ $(INCLUDE) $(LIBFT) -l readline
-	@echo "$(GREEN)Build Successfully$(RESET)"
+	@$(CC) $(CFLAGS) $(OBJS) -o $@ $(INCLUDE) $(LIBFT) $(READ_LN)
+	@echo "$(GREEN)Build Successful$(RESET)"
 
 $(PATH_OBJS)%.o: $(PATH_SRC)%.c
 	@mkdir -p $(PATH_OBJS)
@@ -66,19 +64,19 @@ $(PATH_OBJS)%.o: $(PATH_SRC)%.c
 
 # Libft rule
 $(LIBFT):
-	make -C $(LIBFT_PATH)
+	make -C $(LIBFT_PATH) $(NO_PRINT)
 
 clean:
 	@echo "$(RED)Cleaning objects...$(RESET)"
 	@$(RM) $(PATH_OBJS)
-	@make -C $(LIBFT_PATH) clean $(MAKE_NO_PRINT)
+	@make -C $(LIBFT_PATH) clean $(NO_PRINT)
 	@echo "$(GREEN)Done!$(RESET)"
 
 fclean: clean
 	@echo  "$(RED)Cleaning all...$(RESET)"
 	@$(RM) $(NAME)
-	@make -C $(LIBFT_PATH) fclean $(MAKE_NO_PRINT)
-	@echo  "$(RED)Cleaning binaries$(RESET)"
+	@make -C $(LIBFT_PATH) fclean $(NO_PRINT)
+	@echo "$(RED)Cleaning binaries...$(RESET)"
 	@echo "$(GREEN)Done!$(RESET)"
 
 re: fclean all
@@ -86,4 +84,4 @@ re: fclean all
 run:
 	make re && ./minishell
 
-.PHONY: all bonus run run_bonus re re_bonus clean fclean
+.PHONY: all run re clean fclean
