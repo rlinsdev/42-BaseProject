@@ -6,7 +6,7 @@
 #    By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/12 14:04:52 by rlins             #+#    #+#              #
-#    Updated: 2022/11/12 14:09:04 by rlins            ###   ########.fr        #
+#    Updated: 2022/11/12 17:02:56 by rlins            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,9 +75,7 @@ all: prep $(LIBNAME)
 
 # Compiles
 prep:
-#@echo "$(LIBNAME): $(BLUE)Generating... Just a minute$(RESET)"
 	@$(MKDIR) $(SRCS_PATH) $(OBJS_PATH)
-#@echo "$(LIBNAME): $(GREEN)Done!$(RESET)"
 
 $(LIBNAME): $(OBJECTS)
 	@ar -rcs $(LIBS_PATH)$(LIBNAME) $(OBJECTS)
@@ -86,11 +84,9 @@ $(OBJS_PATH)%.o : $(SRCS_PATH)%.c $(HEADERS_PATH)*.h
 	@$(CC) $(FLAGS) -c -I $(HEADERS_PATH) $< -o $@
 
 clean:
-#@echo "$(LIBNAME): $(RED)object (*.o) files were deleted$(RESET)"
 	@$(RM) $(OBJECTS)
 
 fclean:
-#@echo "$(LIBNAME): $(RED)was deleted$(RESET)"
 	@$(RM) $(OBJECTS)
 	@$(RM) $(LIBS_PATH)$(LIBNAME)
 
