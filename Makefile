@@ -6,7 +6,7 @@
 #    By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/12 08:46:02 by rlins             #+#    #+#              #
-#    Updated: 2022/11/12 13:49:38 by rlins            ###   ########.fr        #
+#    Updated: 2022/11/12 14:12:38 by rlins            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,7 +64,7 @@ $(PATH_OBJS)%.o: $(PATH_SRC)%.c
 
 # Libft rule
 $(LIBFT):
-	make -C $(LIBFT_PATH) $(NO_PRINT)
+	@make -C $(LIBFT_PATH) $(NO_PRINT)
 
 clean:
 	@echo "$(RED)Cleaning objects...$(RESET)"
