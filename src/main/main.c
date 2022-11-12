@@ -1,17 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   initialization.c                                   :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/12 08:54:58 by rlins             #+#    #+#             */
-/*   Updated: 2022/11/12 09:01:51 by rlins            ###   ########.fr       */
+/*   Created: 2022/11/12 09:16:27 by rlins             #+#    #+#             */
+/*   Updated: 2022/11/12 09:20:05 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	start(int argc, char **argv, char **envp)
+#include <minishell.h>
+
+/**
+ * @brief Main Class of program
+ * @param argc Arguments Count
+ * @param argv Arguments Vector
+ * @param envp Environment variables
+ * @return int
+ */
+int main(int argc, char **argv, char **envp)
 {
-	printf("opa");
+	init(argc, argv, envp);
 	return (0);
 }
