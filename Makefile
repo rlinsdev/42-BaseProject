@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: rlins <rlins@student.42.fr>                +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/07/28 19:15:33 by rlins             #+#    #+#              #
-#    Updated: 2022/07/28 21:27:58 by rlins            ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 # Collors
 GREEN = \033[0;32m
 RED = \033[0;31m
@@ -36,7 +24,7 @@ MAKE_NOPRINT = $(MAKE) --no-print-directory
 LIBNAME = baseproject.a
 SRC_FILES = float_vector.c \
 			mytime.c
-			
+
 SOURCES = $(addprefix $(SRCS_PATH), $(SRC_FILES))
 OBJ_FILES = $(patsubst %.c, %.o, $(SRC_FILES))
 OBJECTS = $(addprefix $(OBJS_PATH), $(OBJ_FILES))
