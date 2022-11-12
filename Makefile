@@ -6,7 +6,7 @@
 #    By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/12 08:46:02 by rlins             #+#    #+#              #
-#    Updated: 2022/11/12 13:24:40 by rlins            ###   ########.fr        #
+#    Updated: 2022/11/12 13:26:58 by rlins            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,13 +70,13 @@ $(LIBFT):
 clean:
 	@echo "$(RED)Cleaning objects$(RESET)"
 	@$(RM) $(PATH_OBJS)
-	make -C $(LIBFT_PATH) clean
+	@make -C $(LIBFT_PATH) clean
 	@echo "$(GREEN)Done!$(RESET)"
 
 fclean: clean
 	@echo  "$(RED)Cleaning all$(RESET)"
 	@$(RM) $(NAME)
-	make -C $(LIBFT_PATH) fclean
+	@make -C $(LIBFT_PATH) fclean
 	@echo  "$(RED)Cleaning binaries$(RESET)"
 	@echo "$(GREEN)Done!$(RESET)"
 
